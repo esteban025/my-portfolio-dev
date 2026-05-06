@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./variables.css";
+@import "./buttons.css";
 
 /* fonts */
 /* Supports weights 300-900 */
@@ -7,4 +8,5 @@
 
 body {
   font-family: var(--font-geom);
+  color: var(--color-violet-50);
 }

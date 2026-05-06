@@ -1,0 +1,39 @@
+.btn {
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+
+  transition: scale 100ms ease-in-out, border-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+
+  &:active {
+    scale: 0.95;
+  }
+}
+
+.btn-primary {
+  background: var(--color-bg-btn-primary);
+  background-color: var(--color-violet-600);
+  color: var(--color-violet-50);
+  border-color: var(--color-violet-600);
+
+  &:hover {
+    border-color: var(--color-blue-800);
+    box-shadow: -1px -1px 5px var(--color-violet-600), 1px 1px 5px var(--color-blue-600);
+  }
+}
+
+.btn-secondary {
+  border-color: var(--color-gray-700);
+  box-shadow: 0 0 8px #ffffff10;
+
+  &:hover {
+    box-shadow: 0 0 8px #ffffff40;
+    border-color: #ffffff50;
+  }
+}

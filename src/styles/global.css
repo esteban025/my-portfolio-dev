@@ -10,3 +10,16 @@ body {
   font-family: var(--font-geom);
   color: var(--color-violet-50);
 }
+
+.animate-entry-icon {
+  animation: entry-icon 200ms ease-in-out both;
+}
+
+@keyframes entry-icon {
+  0% {
+    transform: scale(.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

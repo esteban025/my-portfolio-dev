@@ -1,3 +1,10 @@
 @theme {
+  /* === FONTS === */
   --font-geom: 'Geom Variable', sans-serif;
+
+
+  /* === COLORS === */
+  --color-bg_primary: #0D1117;
+  --color-bg_header: #010409;
+  --color-bg-btn-primary: linear-gradient(to right bottom, var(--color-violet-600), var(--color-blue-600));
 }

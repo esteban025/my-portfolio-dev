@@ -1,7 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/sections/Header.astro";
 ---
 
 <Layout title="Esteban Dev | My Portafolio">
-	<h1>Esteban</h1>
+	<div
+		class="border border-gray-700 rounded-2xl bg-sky-600/10 backdrop-blur-sm"
+	>
+		<Header />
+		<section>hola</section>
+	</div>
 </Layout>

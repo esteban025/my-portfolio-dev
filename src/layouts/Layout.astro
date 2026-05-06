@@ -4,6 +4,7 @@ interface Props {
 }
 const { title } = Astro.props;
 
+import ParticlesBg from "@/components/ParticlesBg.astro";
 import "../styles/global.css";
 ---
 
@@ -16,7 +17,8 @@ import "../styles/global.css";
 		<!-- <link rel="icon" href="/favicon.ico" /> -->
 		<title>{title}</title>
 	</head>
-	<body class="">
+	<body class="p-4">
+		<ParticlesBg />
 		<slot />
 	</body>
 </html>

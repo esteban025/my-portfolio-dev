@@ -112,53 +112,85 @@ export const my_information = {
       subtitle: "The process behind every successful project",
       cards: [
         {
-          id: "01",
-          label: "Identity",
+          id: 1,
+          label: "Identidad",
+          color: {
+            text: "text-purple-400",
+            border: "border-purple-400/40",
+            shadowInset: "#9333ea20",
+            shadowOut: "#9333ea30",
+          },
           details: [
             "Esteban.dev",
-            "Web Developer",
+            "Desarrollador Web",
             "Ecuador"
-          ]
+          ],
+          icon: "mdi:account-tie-outline"
         },
         {
-          id: "02",
-          label: "What I do",
+          id: 2,
+          label: "Que hago?",
+          color: {
+            text: "text-teal-300",
+            border: "border-teal-400/30",
+            shadowInset: "#0d948820",
+            shadowOut: "#0d948830",
+          },
           details: [
-            "Web Development",
-            "Automation",
-            "Dashboards",
-            "Integrations"
-          ]
+            "Automatizaciones",
+            "Panels de Control",
+            "Integraciones"
+          ],
+          icon: "mdi:archive-success-outline"
         },
         {
-          id: "03",
+          id: 3,
           label: "Stack",
+          color: {
+            text: "text-sky-600",
+            border: "border-sky-600",
+            shadowInset: "#0284c720",
+            shadowOut: "#0284c730",
+          },
           details: [
             "Astro / React",
             "Node.js",
-            "PostgreSQL",
+            "PostgreSQL / Supabase",
             "n8n"
-          ]
+          ],
+          icon: "mdi:cog-outline"
         },
-        {
-          id: "04",
-          label: "Goal",
-          details: [
-            "Build solutions",
-            "that save time",
-            "and scale",
-            "businesses"
-          ]
-        },
-        {
-          id: "05",
-          label: "Impact",
-          details: [
-            "More efficiency",
-            "More growth",
-            "Better systems"
-          ]
-        }
+        // {
+        //   id: "04",
+        //   label: "Goal",
+        //   color: {
+        //     text: "text-orange-600",
+        //     border: "border-orange-600",
+        //     shadow: "#ffffff10",
+        //   },
+        //   details: [
+        //     "Build solutions",
+        //     "that save time",
+        //     "and scale",
+        //     "businesses"
+        //   ],
+        //   icon: "mdi:account"
+        // },
+        // {
+        //   id: "05",
+        //   label: "Impact",
+        //   color: {
+        //     text: "text-teal-600",
+        //     border: "border-teal-600",
+        //     shadow: "#ffffff10",
+        //   },
+        //   details: [
+        //     "More efficiency",
+        //     "More growth",
+        //     "Better systems"
+        //   ],
+        //   icon: "mdi:account"
+        // }
       ]
     },
     automation_showcase: {

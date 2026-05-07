@@ -4,9 +4,10 @@ interface Props {
 }
 const { title } = Astro.props;
 
-import ParticlesBg from "@/components/ParticlesBg.astro";
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 
+import ParticlesBg from "@/components/ParticlesBg.astro";
 import Header from "@/sections/Header.astro";
 import Footer from "@/sections/Footer.astro";
 ---
@@ -19,23 +20,23 @@ import Footer from "@/sections/Footer.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<!-- <link rel="icon" href="/favicon.ico" /> -->
 		<title>{title}</title>
+		<ClientRouter />
 	</head>
 	<body class="">
 		<ParticlesBg />
 		<div
-			class="border border-gray-700 rounded-2xl bg-gray-600/10 overflow-x-hidden backdrop-blur-sm grid grid-rows-[auto_1fr_auto] inset-4 fixed content-page"
+			id="content-page"
+			class="border border-gray-700 rounded-2xl bg-gray-600/10 overflow-x-hidden backdrop-blur-sm grid grid-rows-[auto_1fr_auto] inset-4 fixed max-w-341 mx-auto"
 		>
 			<Header />
-			<main class="">
-				<slot />
-			</main>
+			<slot />
 			<Footer />
 		</div>
 	</body>
 </html>
 
 <style>
-	.content-page::-webkit-scrollbar {
+	#content-page::-webkit-scrollbar {
 		display: none;
 	}
 </style>

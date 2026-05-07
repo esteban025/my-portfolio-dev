@@ -1,0 +1,20 @@
+---
+import { my_information } from "@/scripts/information";
+import { WorkflowSection } from "@/components/workflows/WorkflowSection";
+
+// infomacion de workflow
+const wf = my_information.sections.workflow;
+---
+
+<section class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-2 p-4">
+  <header class="space-y-4">
+    <div class="text-2xl p-4 border-b border-gray-700">
+      <h2 class="text-center">
+        <span class="text-sky-500 mr-2">{wf.index}.</span>
+        {wf.title}
+      </h2>
+    </div>
+    <p class="text-gray-400 text-center">{wf.subtitle}</p>
+  </header>
+  <WorkflowSection client:only="react" items={wf.cards} />
+</section>

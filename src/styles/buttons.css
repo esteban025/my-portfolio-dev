@@ -9,7 +9,7 @@
   justify-content: center;
   gap: .5rem;
 
-  transition: scale 100ms ease-in-out, border-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, border-color 300ms ease-in-out, color 300ms ease-in-out;
 
   &:active {
     scale: 0.95;
@@ -18,22 +18,24 @@
 
 .btn-primary {
   background: var(--color-bg-btn-primary);
-  background-color: var(--color-violet-600);
+  background-color: var(--color-color_1);
   color: var(--color-violet-50);
-  border-color: var(--color-violet-600);
+  border-color: var(--color-color_2);
 
   &:hover {
-    border-color: var(--color-blue-800);
-    box-shadow: -1px -1px 5px var(--color-violet-600), 1px 1px 5px var(--color-blue-600);
+    /* border-color: var(--color-color_2); */
+    box-shadow: -1px -1px 5px var(--color-color_1), 1px 1px 5px var(--color-color_2);
   }
 }
 
 .btn-secondary {
   border-color: var(--color-gray-700);
   box-shadow: 0 0 8px #ffffff10;
-
+  color: var(--color-gray-300);
+  
   &:hover {
     box-shadow: 0 0 8px #ffffff40;
     border-color: #ffffff50;
+    color: var(--color-gray-100);
   }
 }

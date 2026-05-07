@@ -20,16 +20,22 @@ import Footer from "@/sections/Footer.astro";
 		<!-- <link rel="icon" href="/favicon.ico" /> -->
 		<title>{title}</title>
 	</head>
-	<body class="p-4">
+	<body class="">
 		<ParticlesBg />
 		<div
-			class="border border-gray-700 rounded-2xl bg-bg_primary/50 backdrop-blur-md overflow-hidden grid grid-rows-[auto_1fr_auto] min-h-screen"
+			class="border border-gray-700 rounded-2xl bg-gray-600/10 overflow-x-hidden backdrop-blur-sm grid grid-rows-[auto_1fr_auto] inset-4 fixed content-page"
 		>
 			<Header />
-			<main class="h-full">
+			<main class="">
 				<slot />
 			</main>
 			<Footer />
 		</div>
 	</body>
 </html>
+
+<style>
+	.content-page::-webkit-scrollbar {
+		display: none;
+	}
+</style>

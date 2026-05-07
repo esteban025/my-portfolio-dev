@@ -46,17 +46,24 @@ export const my_information = {
     ]
   },
   hero: {
-    availability: "Available for new projects",
-    title_white: "I build ",
-    title_accent: "automated systems",
-    title_suffix: " & modern web experiences.",
-    description: "I help businesses save time and scale with custom applications, dashboards and automation workflows using n8n and modern technologies.",
+    availability: "Disponible para nuevos proyectos",
+    welcome: "Hola! Soy",
+    name: "Esteban",
+    position: "Desarrollador Full Stack & Automatizaciones",
+    description: "Desarrollo sitios web modernos y sistemas automatizados con enfoque en rendimiento y diseño.",
     buttons_cta: [
+      {
+        text: "Proyectos",
+        url: "/projects",
+        class_type: "btn-secondary",
+        icon: Folder
+      },
       {
         text: "Contactame",
         url: "#",
-        class_type: "btn-secondary"
-      }
+        class_type: "btn-primary",
+        icon: Call
+      },
     ],
     trusted_by: [
       "Sheets",
@@ -310,7 +317,7 @@ export const my_information = {
     }
   },
   footer: {
-    text: "© 2024 Esteban.dev — Building the future, one automation at a time.",
+    text: "© 2026 Esteban.dev — Contruyendo y automatizando tu negocio.",
     bottom_links: [
       "Build",
       "Automate",

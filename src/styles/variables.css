@@ -6,5 +6,7 @@
   /* === COLORS === */
   --color-bg_primary: #0D1117;
   --color-bg_header: #010409;
-  --color-bg-btn-primary: linear-gradient(to right bottom, var(--color-violet-600), var(--color-blue-600));
+  --color-color_1: #C62A90;
+  --color-color_2: #2B1D6A;
+  --color-bg-btn-primary: linear-gradient(to right bottom, var(--color-color_1), var(--color-color_2));
 }

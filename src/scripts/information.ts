@@ -1,6 +1,7 @@
-import { Download, Call, AboutMe, Folder, Books, Code } from "@/assets/icons/icons-react"
+import { Download, Call, AboutMe, Folder, Books, Code, Identity, Checklist, Stack } from "@/assets/icons/icons-react"
+import type { MyInformation } from "@/types/information"
 
-export const my_information = {
+export const my_information: MyInformation = {
   site_config: {
     domain: "esteban.dev",
     theme: "dark-premium",
@@ -125,7 +126,7 @@ export const my_information = {
             "Desarrollador Web",
             "Ecuador"
           ],
-          icon: "mdi:account-tie-outline"
+          icon: Identity
         },
         {
           id: 2,
@@ -141,7 +142,7 @@ export const my_information = {
             "Panels de Control",
             "Integraciones"
           ],
-          icon: "mdi:archive-success-outline"
+          icon: Checklist
         },
         {
           id: 3,
@@ -158,7 +159,7 @@ export const my_information = {
             "PostgreSQL / Supabase",
             "n8n"
           ],
-          icon: "mdi:cog-outline"
+          icon: Stack
         },
         // {
         //   id: "04",
@@ -193,167 +194,174 @@ export const my_information = {
         // }
       ]
     },
-    automation_showcase: {
-      index: "02",
-      title: "Automation Showcase",
-      active_project: {
-        name: "Inventory + Sales Reports Automation",
-        status: "Active",
-        stats: [
-          {
-            label: "Rows processed",
-            value: "1,248"
-          },
-          {
-            label: "Success rate",
-            value: "98.5%"
-          },
-          {
-            label: "Time saved",
-            value: "12h / week"
-          }
-        ]
-      }
-    },
-    featured_projects: {
-      index: "03",
-      title: "Featured Projects",
-      projects: [
-        {
-          title: "Automation Dashboard",
-          desc: "Complete analytics and automation dashboard for business operations.",
-          stack: [
-            "Astro",
-            "n8n",
-            "PostgreSQL"
-          ],
-          image: "thumb1.png"
-        },
-        {
-          title: "E-commerce Platform",
-          desc: "Modern e-commerce with payments & subscriptions.",
-          stack: [
-            "React",
-            "Stripe",
-            "Tailwind"
-          ],
-          image: "thumb2.png"
-        },
-        {
-          title: "Telegram Bot System",
-          desc: "Automation & notifications system for Telegram.",
-          stack: [
-            "Node.js",
-            "Telegram",
-            "n8n"
-          ]
-        },
-        {
-          title: "CRM for Businesses",
-          desc: "Customer management system with dashboards.",
-          stack: [
-            "React",
-            "Supabase"
-          ]
-        }
-      ]
-    },
-    services: {
-      index: "05",
-      title: "Services",
-      subtitle: "What I can help you build",
-      items: [
-        {
-          label: "Web Development",
-          desc: "Modern websites & web apps"
-        },
-        {
-          label: "Automation Systems",
-          desc: "n8n workflows & integrations"
-        },
-        {
-          label: "Dashboards",
-          desc: "Analytics & admin panels"
-        },
-        {
-          label: "Integrations",
-          desc: "APIs, Webhooks, 3rd parties"
-        }
-      ]
-    },
-    skills: {
-      index: "06",
-      title: "Skills & Technologies",
-      skill_groups: [
-        {
-          name: "Frontend",
-          percent: 95,
-          tags: [
-            "Astro",
-            "React",
-            "Tailwind CSS",
-            "TypeScript"
-          ]
-        },
-        {
-          name: "Backend",
-          percent: 90,
-          tags: [
-            "Node.js",
-            "Express",
-            "REST APIs"
-          ]
-        },
-        {
-          name: "Automation",
-          percent: 95,
-          tags: [
-            "n8n",
-            "Make",
-            "Zapier"
-          ]
-        },
-        {
-          name: "Database",
-          percent: 85,
-          tags: [
-            "PostgreSQL",
-            "Supabase",
-            "MySQL"
-          ]
-        },
-        {
-          name: "DevOps",
-          percent: 80,
-          tags: [
-            "Vercel",
-            "Netlify",
-            "Docker",
-            "Railway"
-          ]
-        }
-      ]
-    },
-    contact: {
-      index: "08",
-      title: "Let's Connect",
-      email: "hello@esteban.dev",
-      phone: "+593 99 123 4567",
-      location: "Quito, Ecuador",
-      socials: [
-        "GitHub",
-        "LinkedIn",
-        "YouTube",
-        "Telegram"
-      ]
-    }
+    // automation_showcase: {
+    //   index: "02",
+    //   title: "Automation Showcase",
+    //   active_project: {
+    //     name: "Inventory + Sales Reports Automation",
+    //     status: "Active",
+    //     stats: [
+    //       {
+    //         label: "Rows processed",
+    //         value: "1,248"
+    //       },
+    //       {
+    //         label: "Success rate",
+    //         value: "98.5%"
+    //       },
+    //       {
+    //         label: "Time saved",
+    //         value: "12h / week"
+    //       }
+    //     ]
+    //   }
+    // },
+    // featured_projects: {
+    //   index: "03",
+    //   title: "Featured Projects",
+    //   projects: [
+    //     {
+    //       title: "Automation Dashboard",
+    //       desc: "Complete analytics and automation dashboard for business operations.",
+    //       stack: [
+    //         "Astro",
+    //         "n8n",
+    //         "PostgreSQL"
+    //       ],
+    //       image: "thumb1.png"
+    //     },
+    //     {
+    //       title: "E-commerce Platform",
+    //       desc: "Modern e-commerce with payments & subscriptions.",
+    //       stack: [
+    //         "React",
+    //         "Stripe",
+    //         "Tailwind"
+    //       ],
+    //       image: "thumb2.png"
+    //     },
+    //     {
+    //       title: "Telegram Bot System",
+    //       desc: "Automation & notifications system for Telegram.",
+    //       stack: [
+    //         "Node.js",
+    //         "Telegram",
+    //         "n8n"
+    //       ]
+    //     },
+    //     {
+    //       title: "CRM for Businesses",
+    //       desc: "Customer management system with dashboards.",
+    //       stack: [
+    //         "React",
+    //         "Supabase"
+    //       ]
+    //     }
+    //   ]
+    // },
+    // services: {
+    //   index: "05",
+    //   title: "Services",
+    //   subtitle: "What I can help you build",
+    //   items: [
+    //     {
+    //       label: "Web Development",
+    //       desc: "Modern websites & web apps"
+    //     },
+    //     {
+    //       label: "Automation Systems",
+    //       desc: "n8n workflows & integrations"
+    //     },
+    //     {
+    //       label: "Dashboards",
+    //       desc: "Analytics & admin panels"
+    //     },
+    //     {
+    //       label: "Integrations",
+    //       desc: "APIs, Webhooks, 3rd parties"
+    //     }
+    //   ]
+    // },
+    // skills: {
+    //   index: "06",
+    //   title: "Skills & Technologies",
+    //   skill_groups: [
+    //     {
+    //       name: "Frontend",
+    //       percent: 95,
+    //       tags: [
+    //         "Astro",
+    //         "React",
+    //         "Tailwind CSS",
+    //         "TypeScript"
+    //       ]
+    //     },
+    //     {
+    //       name: "Backend",
+    //       percent: 90,
+    //       tags: [
+    //         "Node.js",
+    //         "Express",
+    //         "REST APIs"
+    //       ]
+    //     },
+    //     {
+    //       name: "Automation",
+    //       percent: 95,
+    //       tags: [
+    //         "n8n",
+    //         "Make",
+    //         "Zapier"
+    //       ]
+    //     },
+    //     {
+    //       name: "Database",
+    //       percent: 85,
+    //       tags: [
+    //         "PostgreSQL",
+    //         "Supabase",
+    //         "MySQL"
+    //       ]
+    //     },
+    //     {
+    //       name: "DevOps",
+    //       percent: 80,
+    //       tags: [
+    //         "Vercel",
+    //         "Netlify",
+    //         "Docker",
+    //         "Railway"
+    //       ]
+    //     }
+    //   ]
+    // },
+    // contact: {
+    //   index: "08",
+    //   title: "Let's Connect",
+    //   email: "hello@esteban.dev",
+    //   phone: "+593 99 123 4567",
+    //   location: "Quito, Ecuador",
+    //   socials: [
+    //     "GitHub",
+    //     "LinkedIn",
+    //     "YouTube",
+    //     "Telegram"
+    //   ]
+    // }
   },
   footer: {
-    text: "© 2026 Esteban.dev — Contruyendo y automatizando tu negocio.",
-    bottom_links: [
-      "Build",
-      "Automate",
-      "Scale"
+    copyright: "© 2026 Esteban.dev — Contruyendo y automatizando tu negocio.",
+    social_links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/esteban-dev",
+        icon: "github"
+      },
+      {
+        label: "LinkedIn",
+        url: "https://linkedin.com/in/esteban-dev",
+        icon: "linkedin"
+      }
     ]
   }
 }

@@ -1,82 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-
-interface Props {
-  items: {
-    id: number;
-    label: string;
-    color: {
-      text: string;
-      border: string;
-      shadowInset: string;
-      shadowOut: string;
-    };
-    details: string[];
-    icon: string;
-  }[]
-}
+import { useState, useEffect, useRef } from 'react';
+import { ConnectionArrow } from '../ArrowConect';
+import type { CardsWorkflow } from '@/types/information';
 
 /**
- * COMPONENTE DE FLECHA (SVG)
- * Dibuja una línea azul con puntas de flecha en ambos extremos
- * y un círculo decorativo en el centro.
- */
-interface ConnectionArrowProps {
-  direction: "horizontal" | "vertical"
-}
-const ConnectionArrow: React.FC<ConnectionArrowProps> = ({ direction = 'horizontal' }) => {
-  const isHorizontal = direction === 'horizontal';
-
-  // Estilos base para posicionamiento absoluto
-  const baseStyle: React.CSSProperties = {
-    position: 'absolute',
-    pointerEvents: 'none',
-    zIndex: 1,
-    display: 'block',
-  };
-
-  // Posicionamiento según dirección
-  const directionStyle = isHorizontal
-    ? { right: '-3rem', top: '50%', transform: 'translateY(-50%)', width: '3rem', height: '20px' }
-    : { bottom: '-3rem', left: '50%', transform: 'translateX(-50%)', width: '20px', height: '3rem' };
-
-  return (
-    <svg
-      style={{ ...baseStyle, ...directionStyle }}
-      viewBox={isHorizontal ? "0 0 100 40" : "0 0 40 100"}
-      preserveAspectRatio="none"
-    >
-      <defs>
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-          <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6" />
-        </marker>
-      </defs>
-
-      <line
-        x1={isHorizontal ? "10" : "20"}
-        y1={isHorizontal ? "20" : "10"}
-        x2={isHorizontal ? "90" : "20"}
-        y2={isHorizontal ? "20" : "90"}
-        stroke="#3b82f6"
-        strokeWidth="3"
-        markerEnd="url(#arrowhead)"
-        markerStart="url(#arrowhead)"
-      />
-
-      <circle
-        cx={isHorizontal ? "50" : "20"}
-        cy={isHorizontal ? "20" : "50"}
-        r="6"
-        fill="#3b82f6"
-      />
-    </svg>
-  );
-};
-
-/**
- * COMPONENTE PRINCIPAL: DynamicConnections
+ * COMPONENTE PRINCIPAL: WorkflowSection
  */
 
-export function WorkflowSection({ items = [] }: Props) {
+export function WorkflowSection({ cards = [] }: { cards: CardsWorkflow[] }) {
   const containerRef = useRef<HTMLElement>(null);
   const [columns, setColumns] = useState<number>(0);
 
@@ -99,55 +29,55 @@ export function WorkflowSection({ items = [] }: Props) {
     window.addEventListener('resize', updateLayout);
 
     return () => window.removeEventListener('resize', updateLayout);
-  }, [items, columns]);
+  }, [cards, columns]);
 
   return (
     <section
       ref={containerRef}
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: '3rem', // Este gap debe coincidir con el tamaño de las flechas (3rem)
-        position: 'relative',
-        padding: '1rem',
-        width: '100%'
-      }}
+      // el gap-12 debe coincidir con el tamaño de las flechas (3rem)
+      className='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 w-full relative'
     >
-      {items.map((item, index) => {
+      {cards.map((card, index) => {
         // --- Lógica de Conexiones ---
 
         // 1. Conexión Horizontal: 
         // Si NO es el último de la fila Y hay un siguiente elemento
-        const hasRight = (index + 1) % columns !== 0 && index + 1 < items.length;
+        const hasRight = (index + 1) % columns !== 0 && index + 1 < cards.length;
 
         // 2. Conexión Vertical: 
         // Si hay un elemento exactamente debajo (index + número de columnas)
-        const hasBottom = index + columns < items.length;
+        const hasBottom = index + columns < cards.length;
 
         return (
-          <div
-            key={item.id || index}
+          <article
+            key={card.id || index}
+            className={`relative z-2 border border-gray-700 rounded-xl p-4 space-y-2 ${card.color?.border} ${card.color?.text}`}
+
             style={{
-              position: 'relative',
-              border: '2px solid #3b82f6',
-              borderRadius: '12px',
-              padding: '2rem',
-              minHeight: '120px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: 'white',
-              zIndex: 2 // Por encima de las flechas
+              boxShadow: `inset 0px 0px 40px ${card.color?.shadowInset}, 0 0 20px ${card.color?.shadowOut}`
             }}
           >
-            <span style={{ fontWeight: 'bold', color: '#1e293b' }}>
-              {item.label}
-            </span>
+
+            <header className="flex items-center gap-2">
+              <div className="size-10">
+                {card.icon && <card.icon />}
+              </div>
+              <h3 className="text-xl">{card.label}</h3>
+            </header>
+
+            <div className="content-card">
+              <ul className="text-gray-400">
+                {card.details.map((it, idx) => (
+                  <li key={idx}>{it}</li>
+                ))}
+              </ul>
+            </div>
+
 
             {/* Flechas */}
             {hasRight && <ConnectionArrow direction="horizontal" />}
             {hasBottom && <ConnectionArrow direction="vertical" />}
-          </div>
+          </article>
         );
       })}
     </section>

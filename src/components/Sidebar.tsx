@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Cross, Menu, Download, Call } from "@/assets/icons/icons-react"
+import { Cross, Menu } from "@/assets/icons/icons-react"
 import { my_information } from "@/scripts/information"
 
 export const Sidebar = () => {
@@ -13,24 +13,26 @@ export const Sidebar = () => {
 
   return (
     <div className="">
-      <aside>
-        <button onClick={handleOpen} className="cursor-pointer relative z-50">
+      <aside className="">
+        <button onClick={handleOpen} className="cursor-pointer relative z-50 block p-1 border border-gray-700 rounded-md text-gray-400">
           {isOpen ? <Cross /> : <Menu />}
         </button>
       </aside>
-      <nav className={`absolute top-0 right-0 z-20 border border-gray-700 rounded-2xl bg-bg_primary backdrop-blur-md transition-all duration-300 w-2/3 max-w-100 overflow-hidden ${isOpen ? 'translate-x-0 shadow-lg shadow-gray-700' : 'translate-x-full shadow-none'}`}>
-        <header className="py-4 flex items-center justify-center border-b border-gray-700 bg-bg_header">
+      <nav className={`absolute top-0 right-0 z-20 border border-gray-700 rounded-2xl bg-bg_header backdrop-blur-md transition-all duration-300 w-2/3 max-w-80 overflow-hidden ${isOpen ? 'translate-x-0 shadow-lg shadow-gray-700' : 'translate-x-full shadow-none'}`}>
+        <header className="py-4 flex items-center justify-center">
           <h2 className="min-h-6 block">Menu</h2>
         </header>
-        <ul className="flex flex-col links-nav">
+        <ul className="flex flex-col links-nav p-3 border-b border-gray-700">
           {
             listLinks.map(link => (
               <li key={link.label}>
                 <a
-                  className="p-3 border-b border-gray-700 text-gray-400 flex items-center gap-4 transition-colors duration-300 hover:text-violet-400 hover:border-violet-500 hover:shadow-md hover:shadow-violet-500/20"
+                  className="p-2 py-1.5 text-gray-200 flex items-center gap-2 rounded-lg transition-colors duration-200 hover:bg-bg_primary"
                   href={link.id}
                 >
-                  <link.icon />
+                  <span className="text-gray-500">
+                    <link.icon />
+                  </span>
                   {link.label}
                 </a>
               </li>

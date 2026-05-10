@@ -9,4 +9,7 @@
   --color-color_1: #C62A90;
   --color-color_2: #2B1D6A;
   --color-bg-btn-primary: linear-gradient(to right bottom, var(--color-color_1), var(--color-color_2));
+
+  /* === Width */
+  --breakpoint-lgs: 1008px;
 }

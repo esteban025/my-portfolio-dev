@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { ConnectionArrow } from '../ArrowConect';
-import type { CardsWorkflow } from '@/types/information';
+import { Card } from './Card';
+import { my_information } from '@/scripts/information';
 
 /**
  * COMPONENTE PRINCIPAL: WorkflowSection
  */
 
-export function WorkflowSection({ cards = [] }: { cards: CardsWorkflow[] }) {
+export function CardsContainer() {
+  const cards = my_information.sections.workflow.cards;
   const containerRef = useRef<HTMLElement>(null);
   const [columns, setColumns] = useState<number>(0);
 
@@ -35,7 +37,7 @@ export function WorkflowSection({ cards = [] }: { cards: CardsWorkflow[] }) {
     <section
       ref={containerRef}
       // el gap-12 debe coincidir con el tamaño de las flechas (3rem)
-      className='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 w-full relative'
+      className='grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] lgs:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 w-full relative'
     >
       {cards.map((card, index) => {
         // --- Lógica de Conexiones ---
@@ -49,35 +51,16 @@ export function WorkflowSection({ cards = [] }: { cards: CardsWorkflow[] }) {
         const hasBottom = index + columns < cards.length;
 
         return (
-          <article
-            key={card.id || index}
-            className={`relative z-2 border border-gray-700 rounded-xl p-4 space-y-2 ${card.color?.border} ${card.color?.text}`}
 
-            style={{
-              boxShadow: `inset 0px 0px 40px ${card.color?.shadowInset}, 0 0 20px ${card.color?.shadowOut}`
-            }}
+          <Card
+            key={card.id}
+            card={card}
+            index={index}
           >
-
-            <header className="flex items-center gap-2">
-              <div className="size-10">
-                {card.icon && <card.icon />}
-              </div>
-              <h3 className="text-xl">{card.label}</h3>
-            </header>
-
-            <div className="content-card">
-              <ul className="text-gray-400">
-                {card.details.map((it, idx) => (
-                  <li key={idx}>{it}</li>
-                ))}
-              </ul>
-            </div>
-
-
             {/* Flechas */}
             {hasRight && <ConnectionArrow direction="horizontal" />}
             {hasBottom && <ConnectionArrow direction="vertical" />}
-          </article>
+          </Card>
         );
       })}
     </section>

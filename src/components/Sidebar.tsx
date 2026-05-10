@@ -14,7 +14,7 @@ export const Sidebar = () => {
   return (
     <div className="">
       <aside className="">
-        <button onClick={handleOpen} className="cursor-pointer relative z-50 block p-1 border border-gray-700 rounded-md text-gray-400">
+        <button onClick={handleOpen} className="relative z-50 block btn btn-square">
           {isOpen ? <Cross /> : <Menu />}
         </button>
       </aside>

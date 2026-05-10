@@ -1,12 +1,12 @@
 ---
 import { my_information } from "@/scripts/information";
-import { WorkflowSection } from "@/components/workflows/WorkflowSection";
+import { CardsContainer } from "@/components/workflows/CardsContainer";
 
 // infomacion de workflow
 const wf = my_information.sections.workflow;
 ---
 
-<section class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4 p-4">
+<section class="grid grid-cols-1 lgs:grid-cols-[1fr_3fr] gap-14 p-4">
   <header class="space-y-4">
     <div class="text-2xl p-4 border-b border-gray-700">
       <h2 class="text-center">
@@ -16,5 +16,5 @@ const wf = my_information.sections.workflow;
     </div>
     <p class="text-gray-400 text-center">{wf.subtitle}</p>
   </header>
-  <WorkflowSection client:only="react" cards={wf.cards} />
+  <CardsContainer client:only="react" />
 </section>

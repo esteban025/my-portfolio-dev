@@ -53,16 +53,19 @@ export interface CardsWorkflow {
   label: string;
   color: {
     text: string;
-    border: string;
-    shadowInset: string;
-    shadowOut: string;
+    border: {
+      default: string;
+      hover: string;
+    };
+    shadow: string;
   },
-  details: string[];
+  details: string;
   icon: any;
 }
 
 export interface Footer {
   copyright: string;
+  phrase: string;
   social_links: {
     label: string;
     url: string;

@@ -1,4 +1,4 @@
-import { Download, Call, AboutMe, Folder, Books, Code, Identity, Checklist, Stack } from "@/assets/icons/icons-react"
+import { Download, Call, AboutMe, Folder, Books, Code, Identity, Checklist, Stack, Goal, Impact, Github, Linkedin } from "@/assets/icons/icons-react"
 import type { MyInformation } from "@/types/information"
 
 export const my_information: MyInformation = {
@@ -109,89 +109,79 @@ export const my_information: MyInformation = {
   sections: {
     workflow: {
       index: "01",
-      title: "My Workflow",
-      subtitle: "The process behind every successful project",
+      title: "Mi Workflow",
+      subtitle: "El proceso que hay detrás de cada proyecto exitoso",
       cards: [
         {
           id: 1,
           label: "Identidad",
           color: {
-            text: "text-purple-400",
-            border: "border-purple-400/40",
-            shadowInset: "#9333ea20",
-            shadowOut: "#9333ea30",
+            text: "text-indigo-300/50",
+            border: {
+              default: "border-indigo-500/40",
+              hover: "hover:border-indigo-500/30"
+            },
+            shadow: "hover:shadow-[0_0_24px_#6366f11f]",
           },
-          details: [
-            "Esteban.dev",
-            "Desarrollador Web",
-            "Ecuador"
-          ],
+          details: "Creo soluciones digitales de alto impacto y diseño minimalista.",
           icon: Identity
         },
         {
           id: 2,
-          label: "Que hago?",
+          label: "Especialidad",
           color: {
-            text: "text-teal-300",
-            border: "border-teal-400/30",
-            shadowInset: "#0d948820",
-            shadowOut: "#0d948830",
+            text: "text-teal-300/50",
+            border: {
+              default: "border-teal-500/40",
+              hover: "hover:border-teal-400/30"
+            },
+            shadow: "hover:shadow-[0_0_24px_#14b8a61f]",
           },
-          details: [
-            "Automatizaciones",
-            "Panels de Control",
-            "Integraciones"
-          ],
+          details: "Desarrollo interfaces modernas y automatizo procesos, optimizando el rendimiento de tu empresa.",
           icon: Checklist
         },
         {
           id: 3,
-          label: "Stack",
+          label: "Tecnología",
           color: {
-            text: "text-sky-600",
-            border: "border-sky-600",
-            shadowInset: "#0284c720",
-            shadowOut: "#0284c730",
+            text: "text-sky-300/50",
+            border: {
+              default: "border-sky-500/40",
+              hover: "hover:border-sky-500/30"
+            },
+            shadow: "hover:shadow-[0_0_24px_#3b82f61f]",
           },
-          details: [
-            "Astro / React",
-            "Node.js",
-            "PostgreSQL / Supabase",
-            "n8n"
-          ],
+          details: "Astro, React y Node.js, integrando Supabase y n8n para crear sistemas escalables.",
           icon: Stack
         },
-        // {
-        //   id: "04",
-        //   label: "Goal",
-        //   color: {
-        //     text: "text-orange-600",
-        //     border: "border-orange-600",
-        //     shadow: "#ffffff10",
-        //   },
-        //   details: [
-        //     "Build solutions",
-        //     "that save time",
-        //     "and scale",
-        //     "businesses"
-        //   ],
-        //   icon: "mdi:account"
-        // },
-        // {
-        //   id: "05",
-        //   label: "Impact",
-        //   color: {
-        //     text: "text-teal-600",
-        //     border: "border-teal-600",
-        //     shadow: "#ffffff10",
-        //   },
-        //   details: [
-        //     "More efficiency",
-        //     "More growth",
-        //     "Better systems"
-        //   ],
-        //   icon: "mdi:account"
-        // }
+        {
+          id: 4,
+          label: "Objetivo",
+          color: {
+            text: "text-orange-300/50",
+            border: {
+              default: "border-amber-500/40",
+              hover: "hover:border-amber-500/30"
+            },
+            shadow: "hover:shadow-[0_0_24px_#f59e0b1f]",
+          },
+          details: "Crear herramientas que ahorren tiempo, reduzcan errores y hagan crecer tu empresa",
+          icon: Goal
+        },
+        {
+          id: 5,
+          label: "Resultado",
+          color: {
+            text: "text-pink-300/50",
+            border: {
+              default: "border-pink-500/40",
+              hover: "border-pink-500/30"
+            },
+            shadow: "hover:shadow-[0_0_24px_#ec48991f]",
+          },
+          details: "Sistemas optimizados que transforman la complejidad técnica en una ventaja competitiva real.",
+          icon: Impact
+        }
       ]
     },
     // automation_showcase: {
@@ -350,17 +340,18 @@ export const my_information: MyInformation = {
     // }
   },
   footer: {
-    copyright: "© 2026 Esteban.dev — Contruyendo y automatizando tu negocio.",
+    copyright: "© 2026 Esteban.dev",
+    phrase: "Contruyendo y automatizando tu negocio.",
     social_links: [
       {
         label: "GitHub",
         url: "https://github.com/esteban-dev",
-        icon: "github"
+        icon: Github
       },
       {
         label: "LinkedIn",
         url: "https://linkedin.com/in/esteban-dev",
-        icon: "linkedin"
+        icon: Linkedin
       }
     ]
   }
